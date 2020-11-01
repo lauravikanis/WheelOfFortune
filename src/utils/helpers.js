@@ -1,6 +1,5 @@
 export const choosOneRandom = (array) => {
   const randNrInArray = Math.floor(Math.random() * array.length);
-  console.log({ randNrInArray });
   return array[randNrInArray];
 };
 export const getDate = () => {

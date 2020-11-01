@@ -5,6 +5,11 @@ import RealDecide from "./components/RealDecide";
 import "./global.css";
 import "./components/Sets.css";
 import { choosOneRandom, setLocalStorage } from "./utils/helpers";
+import Sets from "./components/Sets";
+import Button from "./components/Button";
+import TheLuckyOne from "./components/TheLuckyOne";
+import ValuesToChoose from "./components/ValuesToChoose";
+import AlreadyChoosen from "./components/AlreadyChoosen";
 
 function App() {
   const [values, setValues] = useState(
@@ -19,20 +24,18 @@ function App() {
   const [sets, setSets] = useState(
     JSON.parse(localStorage.getItem("sets")) || []
   );
-  const [setName, setSetName] = useState("");
 
+  // Set values in localStorage on valuechange
   useEffect(() => {
     try {
-      console.log("set in buttonclick");
       setLocalStorage(values, alreadyChoosen, theLuckyOne, sets);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }, [values, alreadyChoosen, theLuckyOne, sets]);
 
   const moveFromValuesToAlreadyChoosen = (value) => {
     const valuesCleaned = values.filter((item) => item !== value);
-
     setValues(valuesCleaned);
     setAlreadyChoosen([...alreadyChoosen, value]);
   };
@@ -41,58 +44,16 @@ function App() {
     <div className="container">
       <Header />
       <main className="main">
-        <details className="setList">
-          <summary>Sets</summary>
-          <form
-            onSubmit={(event) => {
-              event.preventDefault();
-
-              setSets([
-                ...sets,
-                {
-                  name: setName,
-                  values: values,
-                  alreadyChoosen: alreadyChoosen,
-                  theLuckyOne: theLuckyOne,
-                },
-              ]);
-            }}
-          >
-            <input
-              type="text"
-              placeholder=" Save current as set"
-              onChange={(event) => {
-                setSetName(event.target.value);
-              }}
-            ></input>
-          </form>
-          {sets?.map((set) => {
-            return (
-              <button
-                key={set.name}
-                className="setList__set"
-                onClick={(event) => {
-                  event.preventDefault();
-                  console.log(event);
-                  if (event.altKey) {
-                    setSets(() => {
-                      const cleanedArray = sets.filter(
-                        (setItem) => setItem.name !== set.name
-                      );
-                      setSets(cleanedArray);
-                    });
-                  } else {
-                    setValues(set.values);
-                    setAlreadyChoosen(set.alreadyChoosen);
-                    setTheLuckyOne(set.theLuckyOne);
-                  }
-                }}
-              >
-                <p>{set.name}</p>
-              </button>
-            );
-          })}
-        </details>
+        <Sets
+          setValues={setValues}
+          values={values}
+          setAlreadyChoosen={setAlreadyChoosen}
+          alreadyChoosen={alreadyChoosen}
+          setTheLuckyOne={setTheLuckyOne}
+          theLuckyOne={theLuckyOne}
+          sets={sets}
+          setSets={setSets}
+        />
         <Form
           setValues={setValues}
           setAlreadyChoosen={setAlreadyChoosen}
@@ -100,10 +61,11 @@ function App() {
         />
 
         <div className="realDecideContainer">
-          {/* <h2>wheelTitel</h2> */}
-          <button
-            className="button__reRun glow-on-hover"
+          <Button
+            className={"button__reRun"}
+            innerText={"REAL DECIDE"}
             onClick={() => {
+              console.log("click");
               if (values.length > 0) {
                 const randomPerson = choosOneRandom(values);
                 setTheLuckyOne(randomPerson);
@@ -114,35 +76,20 @@ function App() {
                 setAlreadyChoosen([]);
               }
             }}
-          >
-            ReRun
-          </button>
-          {theLuckyOne && (
-            <>
-              <h3>🚀 Its you! 👩‍🎤</h3>
-              <h2 className="theLuckyOne">✨ {theLuckyOne} ✨</h2>
-            </>
-          )}
+          />
+          {theLuckyOne && <TheLuckyOne theLuckyOne={theLuckyOne} />}
           <div className="valuesToChoose">
             {values.length > 0 && (
-              <>
-                <h2>👬👭 Participants 👬👭</h2>
-                <RealDecide values={values} setValues={setValues} />
-              </>
+              <ValuesToChoose setValues={setValues} values={values} />
             )}
           </div>
 
-          <div className="alreadyChoosen">
-            {alreadyChoosen.length > 0 && (
-              <>
-                <h2>🎯 Already Choosen 🎯</h2>
-                <RealDecide
-                  values={alreadyChoosen}
-                  setValues={setAlreadyChoosen}
-                />
-              </>
-            )}
-          </div>
+          {alreadyChoosen.length > 0 && (
+            <AlreadyChoosen
+              setAlreadyChoosen={setAlreadyChoosen}
+              alreadyChoosen={alreadyChoosen}
+            />
+          )}
         </div>
       </main>
     </div>

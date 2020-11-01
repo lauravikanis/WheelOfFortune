@@ -1,5 +1,6 @@
 import "./Form.css";
 import { useState } from "react";
+import Button from "./Button";
 
 export default function Form({ setValues, setAlreadyChoosen, setTheLuckyOne }) {
   const [inputValue, setInputValue] = useState("");
@@ -13,7 +14,6 @@ export default function Form({ setValues, setAlreadyChoosen, setTheLuckyOne }) {
       className="form"
       onSubmit={(event) => {
         event.preventDefault();
-        console.log("submitted");
         setAlreadyChoosen([]);
         setTheLuckyOne("");
         setValues(inputValueToArray(inputValue, separator));
@@ -38,13 +38,7 @@ export default function Form({ setValues, setAlreadyChoosen, setTheLuckyOne }) {
           type="text"
         />
       </div>
-      <button
-        className="button__submit glow-on-hover"
-        type="submit"
-        value="Submit"
-      >
-        Submit
-      </button>
+      <Button className="button__submit" innerText={"Submit"} />
     </form>
   );
 }
