@@ -3,7 +3,7 @@ import Form from "./components/Form";
 import Header from "./components/Header";
 import Rounds from "./components/Rounds";
 import "./global.css";
-import "./components/Sets.css";
+
 import { choosOneRandom, setLocalStorage } from "./utils/helpers";
 import Sets from "./components/Sets";
 import Button from "./components/Button";

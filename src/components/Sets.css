@@ -5,9 +5,10 @@
 }
 .setList {
   margin: 1rem auto;
+  text-align: center;
 }
 
-.setList summary {
+.setTitle {
   margin: auto;
   color: var(--action-text);
   letter-spacing: 2px;
@@ -32,4 +33,8 @@
   color: white;
   border: var(--action-text);
   border-radius: 5px;
+}
+
+.tippy-content {
+  padding: 3px;
 }
