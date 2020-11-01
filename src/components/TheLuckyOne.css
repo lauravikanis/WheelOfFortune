@@ -1,5 +1,9 @@
 .theLuckyOne__text {
   display: inline-block;
-  border: 1px solid var(--action-text);
+  color: var(--action-text);
+  background-color: var(--action-text);
   padding: 0.5rem;
+  text-shadow: 0 -2 5px var(--background-dark),
+    0px 2px 5px var(--background-dark), -2px -2px var(--background-dark);
+  border-radius: 5px;
 }
