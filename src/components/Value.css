@@ -1,3 +1,9 @@
+.valuesToChoose,
+.alreadyChoosen {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
 .value {
   display: table;
   border-radius: 10px;

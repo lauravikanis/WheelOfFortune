@@ -15,11 +15,13 @@ export const setLocalStorage = (
   alreadyChoosen,
   theLuckyOne,
   sets,
+  activeSet,
   round
 ) => {
   localStorage.setItem("values", JSON.stringify(values));
   localStorage.setItem("alreadyChoosen", JSON.stringify(alreadyChoosen));
   localStorage.setItem("theLuckyOne", JSON.stringify(theLuckyOne));
   localStorage.setItem("sets", JSON.stringify(sets));
+  localStorage.setItem("activeSet", JSON.stringify(activeSet));
   localStorage.setItem("round", JSON.stringify(round));
 };

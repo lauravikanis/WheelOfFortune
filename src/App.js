@@ -24,6 +24,9 @@ function App() {
   const [sets, setSets] = useState(
     JSON.parse(localStorage.getItem("sets")) || []
   );
+  const [activeSet, setActiveSet] = useState(
+    JSON.parse(localStorage.getItem("activeSet")) || { name: "New Round" }
+  );
 
   const [round, setRound] = useState(
     JSON.parse(localStorage.getItem("round")) || 0
@@ -33,11 +36,18 @@ function App() {
   useEffect(() => {
     try {
       console.log("set in buttonclick");
-      setLocalStorage(values, alreadyChoosen, theLuckyOne, sets, round);
+      setLocalStorage(
+        values,
+        alreadyChoosen,
+        theLuckyOne,
+        sets,
+        activeSet,
+        round
+      );
     } catch (error) {
       console.error(error);
     }
-  }, [values, alreadyChoosen, theLuckyOne, sets, round]);
+  }, [values, alreadyChoosen, theLuckyOne, activeSet, sets, round]);
 
   const moveFromValuesToAlreadyChoosen = (value) => {
     const valuesCleaned = values.filter((item) => item !== value);
@@ -50,7 +60,7 @@ function App() {
       <Header />
       <main className="main">
         <div className="realDecideContainer">
-          <Rounds round={round} setRound={setRound} />
+          <h2 className="setTitle">{activeSet.name}</h2>
           <Button
             className={"button__reRun"}
             innerText={"🎯"}
@@ -68,6 +78,7 @@ function App() {
               }
             }}
           />
+          <Rounds round={round} setRound={setRound} />
           {theLuckyOne ? (
             <TheLuckyOne theLuckyOne={theLuckyOne} />
           ) : (
@@ -80,20 +91,20 @@ function App() {
             setAlreadyChoosen={setAlreadyChoosen}
             setTheLuckyOne={setTheLuckyOne}
           />
-          <div className="outputContainer">
-            <div className="valuesToChoose">
+          {values.length > 0 && (
+            <div className="outputContainer">
               {values.length > 0 && (
                 <ValuesToChoose setValues={setValues} values={values} />
               )}
-            </div>
 
-            {alreadyChoosen.length > 0 && (
-              <AlreadyChoosen
-                setAlreadyChoosen={setAlreadyChoosen}
-                alreadyChoosen={alreadyChoosen}
-              />
-            )}
-          </div>
+              {alreadyChoosen.length > 0 && (
+                <AlreadyChoosen
+                  setAlreadyChoosen={setAlreadyChoosen}
+                  alreadyChoosen={alreadyChoosen}
+                />
+              )}
+            </div>
+          )}
         </div>
       </main>
       <footer>
@@ -108,6 +119,7 @@ function App() {
           setRound={setRound}
           sets={sets}
           setSets={setSets}
+          setActiveSet={setActiveSet}
         />
       </footer>
     </div>

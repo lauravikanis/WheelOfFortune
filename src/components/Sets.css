@@ -6,8 +6,10 @@
   margin: 1rem auto;
   text-align: center;
 }
-
 .setTitle {
+  font-size: 3rem;
+}
+.sets {
   margin: auto;
   color: var(--text-color);
   letter-spacing: 2px;

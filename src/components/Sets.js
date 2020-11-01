@@ -14,6 +14,7 @@ export default function Sets({
   setRound,
   sets,
   setSets,
+  setActiveSet,
 }) {
   const [setName, setSetName] = useState("");
   //   const [visible, setVisible] = useState(false);
@@ -61,7 +62,6 @@ export default function Sets({
                 className="setList__set"
                 onClick={(event) => {
                   event.preventDefault();
-                  console.log(event);
                   if (event.altKey) {
                     setSets(() => {
                       const cleanedArray = sets.filter(
@@ -74,6 +74,7 @@ export default function Sets({
                     setAlreadyChoosen(set.alreadyChoosen);
                     setTheLuckyOne(set.theLuckyOne);
                     setRound(set.round);
+                    setActiveSet(set);
                   }
                 }}
               >
@@ -85,7 +86,7 @@ export default function Sets({
       }
     >
       <h2
-        className="setTitle glow-on-hover"
+        className="sets glow-on-hover"
         //   onClick={toggleButton}
       >
         Sets
