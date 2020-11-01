@@ -23,7 +23,7 @@ export default function Sets({
   //   };
   return (
     <Tippy
-      className="setList"
+      className="setList glow-on-hover"
       //   visible={visible}
       allowHTML={true}
       interactive={true}
@@ -85,7 +85,7 @@ export default function Sets({
       }
     >
       <h2
-        className="setTitle"
+        className="setTitle glow-on-hover"
         //   onClick={toggleButton}
       >
         Sets

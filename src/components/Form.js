@@ -10,7 +10,7 @@ export default function Form({ setValues, setAlreadyChoosen, setTheLuckyOne }) {
   }
 
   return (
-    <details className="formDetails">
+    <details open={true} className="formDetails">
       <summary>Input</summary>
       <form
         className="form"

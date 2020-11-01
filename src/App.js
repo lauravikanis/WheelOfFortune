@@ -59,7 +59,7 @@ function App() {
           <Rounds round={round} setRound={setRound} />
           <Button
             className={"button__reRun"}
-            innerText={"REAL DECIDE"}
+            innerText={"🎯"}
             onClick={() => {
               console.log("click");
               if (values.length > 0) {

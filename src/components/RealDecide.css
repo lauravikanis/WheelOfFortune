@@ -14,9 +14,9 @@
   font-family: var(--titelFont);
   color: var(--action-text);
   background-color: var(--action-background);
-  padding: 1rem;
-  border: none;
-  border-radius: 10px;
+  font-size: 2.5rem;
+  padding: 0.5rem;
+  line-height: 1;
 }
 
 /* https://webdeasy.de/top-css-buttons/ */

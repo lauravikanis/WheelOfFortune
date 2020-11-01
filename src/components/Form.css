@@ -1,12 +1,15 @@
 .formDetails {
   margin: 2rem auto;
+  padding: 1rem;
+  background: rgb(151, 140, 210);
+  border-radius: 5px;
 }
 .formDetails summary {
   margin: auto;
-  color: var(--action-text);
+  color: var(--text-color);
   letter-spacing: 2px;
-  text-shadow: 4px 0 1px black;
-  font-family: var(--titelFont);
+  text-shadow: 1px 0 5px black;
+  font-family: var(--textFont);
   font-size: 1.5rem;
 }
 

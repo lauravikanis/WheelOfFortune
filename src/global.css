@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Montserrat&display=swap");
 
 :root {
+  --background-dark: purple;
   --background-color: #363439;
   --foreground-color: white;
   --text-color: white;
