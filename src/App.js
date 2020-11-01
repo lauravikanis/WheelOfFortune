@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Form from "./components/Form";
 import Header from "./components/Header";
-import RealDecide from "./components/RealDecide";
 import Rounds from "./components/Rounds";
 import "./global.css";
 import "./components/Sets.css";
@@ -50,18 +49,6 @@ function App() {
     <div className="container">
       <Header />
       <main className="main">
-        <Sets
-          setValues={setValues}
-          values={values}
-          setAlreadyChoosen={setAlreadyChoosen}
-          alreadyChoosen={alreadyChoosen}
-          setTheLuckyOne={setTheLuckyOne}
-          theLuckyOne={theLuckyOne}
-          round={round}
-          setRound={setRound}
-          sets={sets}
-          setSets={setSets}
-        />
         <Form
           setValues={setValues}
           setAlreadyChoosen={setAlreadyChoosen}
@@ -102,6 +89,20 @@ function App() {
           )}
         </div>
       </main>
+      <footer>
+        <Sets
+          setValues={setValues}
+          values={values}
+          setAlreadyChoosen={setAlreadyChoosen}
+          alreadyChoosen={alreadyChoosen}
+          setTheLuckyOne={setTheLuckyOne}
+          theLuckyOne={theLuckyOne}
+          round={round}
+          setRound={setRound}
+          sets={sets}
+          setSets={setSets}
+        />
+      </footer>
     </div>
   );
 }

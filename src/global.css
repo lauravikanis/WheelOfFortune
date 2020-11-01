@@ -34,26 +34,25 @@ h3 {
   font-weight: 100;
 }
 
-hr {
-  margin-top: 2rem;
-  border-bottom: 0.5px solid #bbb;
-  width: 80%;
-}
 #root {
   width: 100%;
-  height: 100%;
 }
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  justify-content: center;
 }
 .main {
   width: 100%;
-  height: 100%;
   max-width: 600px;
-  display: grid;
-  grid-template-rows: minmax(110px, auto) 1fr;
-  align-content: center;
   text-align: center;
+  justify-self: center;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
