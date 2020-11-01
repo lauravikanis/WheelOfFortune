@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Form from "./components/Form";
 import Header from "./components/Header";
 import RealDecide from "./components/RealDecide";
+import Rounds from "./components/Rounds";
 import "./global.css";
 import { choosOneRandom, setLocalStorage } from "./utils/helpers";
 
@@ -47,13 +48,7 @@ function App() {
         <hr />
 
         <div className="realDecideContainer">
-          <h2
-            onDoubleClick={() => {
-              setRound(0);
-            }}
-          >
-            Round {round}
-          </h2>
+          <Rounds round={round} setRound={setRound} />
           <button
             className="button__reRun glow-on-hover"
             onClick={() => {
