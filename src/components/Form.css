@@ -1,4 +1,6 @@
 .formDetails {
+  width: 70%;
+  min-width: 300px;
   margin: 2rem auto;
   padding: 1rem;
   background: rgb(151, 140, 210);
