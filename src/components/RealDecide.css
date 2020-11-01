@@ -1,12 +1,23 @@
+.outputContainer {
+  background-color: var(--background-subtle);
+  padding: 1rem 0.5rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+}
 .realDecideContainer {
   margin-top: 2rem;
 }
-
+.noWinner {
+  display: grid;
+  align-items: center;
+  margin: 2rem auto;
+  height: 149px;
+}
 .RealDecide {
   display: flex;
   flex-wrap: wrap;
   color: black;
-  padding: 1rem 0;
+  padding: 0;
   margin: 1rem auto;
 }
 

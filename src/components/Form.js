@@ -11,7 +11,7 @@ export default function Form({ setValues, setAlreadyChoosen, setTheLuckyOne }) {
 
   return (
     <details open={true} className="formDetails">
-      <summary>Input</summary>
+      <summary>🖋 Input ✏️</summary>
       <form
         className="form"
         onSubmit={(event) => {

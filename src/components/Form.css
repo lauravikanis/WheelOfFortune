@@ -12,7 +12,10 @@
   font-family: var(--textFont);
   font-size: 1.5rem;
 }
-
+.formDetails:hover summary::-webkit-details-marker:hover {
+  color: red;
+  background: white;
+}
 .form {
   padding: 1rem;
   text-align: center;

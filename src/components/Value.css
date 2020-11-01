@@ -2,9 +2,11 @@
   display: table;
   border-radius: 10px;
   background-color: var(--action-background);
-  font-family: var(--titelFont);
+  font-family: var(--textFont);
   color: var(--text-color);
   margin: 1rem auto;
   padding: 1rem 2rem;
   list-style-type: none;
+  text-shadow: 0 0 5px var(--background-color);
+  letter-spacing: 2px;
 }

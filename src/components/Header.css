@@ -3,9 +3,11 @@
   color: var(--foreground-color);
   text-align: center;
 }
+.header__titel {
+  margin-top: 4rem;
+  /* padding: 2rem 0 0rem; */
+}
 
-.header__titel,
 .header__subtitel {
-  margin: 0;
-  padding: 1rem;
+  margin-bottom: 2rem;
 }

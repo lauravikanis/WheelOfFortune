@@ -1,5 +1,13 @@
+.theLuckyOne__container {
+  margin: 1rem auto;
+  padding: 1rem 0rem 0;
+}
+.theLuckyOne__itsYou {
+  margin: 1rem 0 auto;
+}
 .theLuckyOne__text {
   display: inline-block;
+  margin: 0.5rem auto 3rem;
   color: var(--action-text);
   background-color: var(--action-text);
   padding: 0.5rem;

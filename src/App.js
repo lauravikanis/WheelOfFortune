@@ -49,12 +49,6 @@ function App() {
     <div className="container">
       <Header />
       <main className="main">
-        <Form
-          setValues={setValues}
-          setAlreadyChoosen={setAlreadyChoosen}
-          setTheLuckyOne={setTheLuckyOne}
-        />
-
         <div className="realDecideContainer">
           <Rounds round={round} setRound={setRound} />
           <Button
@@ -74,19 +68,32 @@ function App() {
               }
             }}
           />
-          {theLuckyOne && <TheLuckyOne theLuckyOne={theLuckyOne} />}
-          <div className="valuesToChoose">
-            {values.length > 0 && (
-              <ValuesToChoose setValues={setValues} values={values} />
+          {theLuckyOne ? (
+            <TheLuckyOne theLuckyOne={theLuckyOne} />
+          ) : (
+            <div className="noWinner">
+              <h2>🌈 new game 👩‍🦳 new luck 🍭 </h2>
+            </div>
+          )}
+          <Form
+            setValues={setValues}
+            setAlreadyChoosen={setAlreadyChoosen}
+            setTheLuckyOne={setTheLuckyOne}
+          />
+          <div className="outputContainer">
+            <div className="valuesToChoose">
+              {values.length > 0 && (
+                <ValuesToChoose setValues={setValues} values={values} />
+              )}
+            </div>
+
+            {alreadyChoosen.length > 0 && (
+              <AlreadyChoosen
+                setAlreadyChoosen={setAlreadyChoosen}
+                alreadyChoosen={alreadyChoosen}
+              />
             )}
           </div>
-
-          {alreadyChoosen.length > 0 && (
-            <AlreadyChoosen
-              setAlreadyChoosen={setAlreadyChoosen}
-              alreadyChoosen={alreadyChoosen}
-            />
-          )}
         </div>
       </main>
       <footer>
