@@ -1,7 +1,6 @@
 .setTooltip {
   background-color: var(--action-background);
   padding: 1rem;
-  border-radius: 5px;
 }
 .setList {
   margin: 1rem auto;
@@ -36,5 +35,7 @@
 }
 
 .tippy-content {
-  padding: 3px;
+  padding: 0.2rem;
+  background-color: rebeccapurple;
+  border-radius: 5px;
 }
