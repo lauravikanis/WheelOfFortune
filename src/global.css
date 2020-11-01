@@ -60,6 +60,7 @@ h2 {
 
 footer {
   width: 100%;
+  padding: 1rem 0 0.5rem;
   display: flex;
   align-items: center;
 }
