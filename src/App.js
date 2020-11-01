@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Form from "./components/Form";
 import Header from "./components/Header";
 import RealDecide from "./components/RealDecide";
+import Rounds from "./components/Rounds";
 import "./global.css";
 import "./components/Sets.css";
 import { choosOneRandom, setLocalStorage } from "./utils/helpers";
@@ -25,14 +26,19 @@ function App() {
     JSON.parse(localStorage.getItem("sets")) || []
   );
 
+  const [round, setRound] = useState(
+    JSON.parse(localStorage.getItem("round")) || 0
+  );
+
   // Set values in localStorage on valuechange
   useEffect(() => {
     try {
-      setLocalStorage(values, alreadyChoosen, theLuckyOne, sets);
+      console.log("set in buttonclick");
+      setLocalStorage(values, alreadyChoosen, theLuckyOne, sets, round);
     } catch (error) {
       console.error(error);
     }
-  }, [values, alreadyChoosen, theLuckyOne, sets]);
+  }, [values, alreadyChoosen, theLuckyOne, sets, round]);
 
   const moveFromValuesToAlreadyChoosen = (value) => {
     const valuesCleaned = values.filter((item) => item !== value);
@@ -51,6 +57,8 @@ function App() {
           alreadyChoosen={alreadyChoosen}
           setTheLuckyOne={setTheLuckyOne}
           theLuckyOne={theLuckyOne}
+          round={round}
+          setRound={setRound}
           sets={sets}
           setSets={setSets}
         />
@@ -61,6 +69,7 @@ function App() {
         />
 
         <div className="realDecideContainer">
+          <Rounds round={round} setRound={setRound} />
           <Button
             className={"button__reRun"}
             innerText={"REAL DECIDE"}
@@ -71,6 +80,7 @@ function App() {
                 setTheLuckyOne(randomPerson);
                 moveFromValuesToAlreadyChoosen(randomPerson);
               } else {
+                setRound(round + 1);
                 setValues(alreadyChoosen);
                 setTheLuckyOne(null);
                 setAlreadyChoosen([]);

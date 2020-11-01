@@ -10,9 +10,16 @@ export const getDate = () => {
   return `${day}|${month}|${year}`;
 };
 
-export const setLocalStorage = (values, alreadyChoosen, theLuckyOne, sets) => {
+export const setLocalStorage = (
+  values,
+  alreadyChoosen,
+  theLuckyOne,
+  sets,
+  round
+) => {
   localStorage.setItem("values", JSON.stringify(values));
   localStorage.setItem("alreadyChoosen", JSON.stringify(alreadyChoosen));
   localStorage.setItem("theLuckyOne", JSON.stringify(theLuckyOne));
   localStorage.setItem("sets", JSON.stringify(sets));
+  localStorage.setItem("round", JSON.stringify(round));
 };

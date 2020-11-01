@@ -7,6 +7,8 @@ export default function Sets({
   setAlreadyChoosen,
   theLuckyOne,
   setTheLuckyOne,
+  round,
+  setRound,
   sets,
   setSets,
 }) {
@@ -26,6 +28,7 @@ export default function Sets({
               values: values,
               alreadyChoosen: alreadyChoosen,
               theLuckyOne: theLuckyOne,
+              round: round,
             },
           ]);
         }}
@@ -57,6 +60,7 @@ export default function Sets({
                 setValues(set.values);
                 setAlreadyChoosen(set.alreadyChoosen);
                 setTheLuckyOne(set.theLuckyOne);
+                setRound(set.round);
               }
             }}
           >
