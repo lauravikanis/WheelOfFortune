@@ -7,7 +7,7 @@ export default function Value({ value, setValues, values }) {
       className="value"
       onClick={(event) => {
         if (event.altKey) {
-          const filteredArray = values.filter((item) => item !== value);
+          const filteredArray = values.filter((item) => item.id !== value.id);
           setValues(filteredArray);
           console.log(filteredArray);
         } else {
@@ -15,7 +15,8 @@ export default function Value({ value, setValues, values }) {
         }
       }}
     >
-      {value}
+      {value.name}
+      <p className="ids">#{value.id}</p>
     </li>
   );
 }

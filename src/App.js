@@ -68,7 +68,7 @@ function App() {
               console.log("click");
               if (values.length > 0) {
                 const randomPerson = choosOneRandom(values);
-                setTheLuckyOne(randomPerson);
+                setTheLuckyOne(randomPerson.name);
                 moveFromValuesToAlreadyChoosen(randomPerson);
               } else {
                 setRound(round + 1);

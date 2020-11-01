@@ -8,7 +8,7 @@ export default function Realdecide({ values, setValues }) {
     <ul className="RealDecide">
       {values.map((value) => (
         <Value
-          key={value}
+          key={value.id}
           value={value}
           values={values}
           setValues={setValues}

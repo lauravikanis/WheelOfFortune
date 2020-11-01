@@ -15,6 +15,7 @@
 }
 .RealDecide {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   color: black;
   padding: 0;

@@ -16,3 +16,9 @@
   text-shadow: 0 0 5px var(--background-color);
   letter-spacing: 2px;
 }
+
+.ids {
+  margin: 0;
+  padding: 0;
+  font-size: 0.5rem;
+}
