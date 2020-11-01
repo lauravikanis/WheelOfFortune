@@ -80,9 +80,11 @@ function App() {
           {theLuckyOne ? (
             <TheLuckyOne theLuckyOne={theLuckyOne} />
           ) : (
-            <div className="noWinner">
-              <h2>🌈 new game 👩‍🦳 new luck 🍭 </h2>
-            </div>
+            values.length > 0 && (
+              <div className="noWinner">
+                <h2>🌈 new game 👩‍🦳 new luck 🍭 </h2>
+              </div>
+            )
           )}
           <Form
             setValues={setValues}
