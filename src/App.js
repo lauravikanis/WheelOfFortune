@@ -35,7 +35,6 @@ function App() {
   // Set values in localStorage on valuechange
   useEffect(() => {
     try {
-      console.log("set in buttonclick");
       setLocalStorage(
         values,
         alreadyChoosen,
@@ -65,7 +64,6 @@ function App() {
             className={"button__reRun"}
             innerText={"🎯"}
             onClick={() => {
-              console.log("click");
               if (values.length > 0) {
                 const randomPerson = choosOneRandom(values);
                 setTheLuckyOne(randomPerson.name);

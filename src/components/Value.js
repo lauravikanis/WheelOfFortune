@@ -9,7 +9,6 @@ export default function Value({ value, setValues, values }) {
         if (event.altKey) {
           const filteredArray = values.filter((item) => item.id !== value.id);
           setValues(filteredArray);
-          console.log(filteredArray);
         } else {
           alert("To delete entry press the <Alt> Key.");
         }
