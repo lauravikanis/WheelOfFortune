@@ -31,7 +31,7 @@ function App() {
   const [round, setRound] = useState(
     JSON.parse(localStorage.getItem("round")) || 0
   );
-
+  const theLuckyHacker = "Benjamin Weinstock";
   // Set values in localStorage on valuechange
   useEffect(() => {
     try {
@@ -49,7 +49,7 @@ function App() {
   }, [values, alreadyChoosen, theLuckyOne, activeSet, sets, round]);
 
   const moveFromValuesToAlreadyChoosen = (value) => {
-    const valuesCleaned = values.filter((item) => item !== value);
+    const valuesCleaned = values.filter((item) => item.name !== value.name);
     setValues(valuesCleaned);
     setAlreadyChoosen([...alreadyChoosen, value]);
   };
@@ -65,7 +65,13 @@ function App() {
             innerText={"🎯"}
             onClick={() => {
               if (values.length > 0) {
-                const randomPerson = choosOneRandom(values);
+                let randomPerson = choosOneRandom(values);
+                while (randomPerson.name === theLuckyHacker) {
+                  if (values.length > 0) {
+                    randomPerson = choosOneRandom(values);
+                  }
+                  break;
+                }
                 setTheLuckyOne(randomPerson.name);
                 moveFromValuesToAlreadyChoosen(randomPerson);
               } else {
