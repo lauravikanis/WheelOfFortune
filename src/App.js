@@ -69,6 +69,7 @@ function App() {
                 while (randomPerson.name === theLuckyHacker) {
                   if (values.length > 0) {
                     randomPerson = choosOneRandom(values);
+                    console.log("he got lucky :)");
                   }
                   break;
                 }
