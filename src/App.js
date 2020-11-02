@@ -29,7 +29,7 @@ function App() {
   );
 
   const [round, setRound] = useState(
-    JSON.parse(localStorage.getItem("round")) || 0
+    JSON.parse(localStorage.getItem("round")) || 1
   );
   const theLuckyHacker = "Benjamin Weinstock";
   // Set values in localStorage on valuechange
