@@ -1,11 +1,11 @@
-.formDetails {
+/* .formDetails {
   width: 70%;
   min-width: 300px;
   margin: 2rem auto;
   padding: 1rem;
   background: rgb(151, 140, 210);
   border-radius: 5px;
-}
+} */
 .formDetails summary {
   margin: auto;
   color: var(--text-color);

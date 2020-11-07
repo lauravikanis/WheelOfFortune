@@ -31,7 +31,7 @@ function App() {
   const [round, setRound] = useState(
     JSON.parse(localStorage.getItem("round")) || 1
   );
-  const theLuckyHacker = "Benjamin Weinstock";
+  const theLuckyHacker = "Name";
   // Set values in localStorage on valuechange
   useEffect(() => {
     try {
