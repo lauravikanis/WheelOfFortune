@@ -17,11 +17,13 @@ const PersonInput = styled.input`
 `;
 
 const InputForm = styled.form`
-  background-color: lightcoral;
+  /* background-color: lightcoral; */
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  width: 70%auto;
+  width: 90%;
+  border: 1px solid whitesmoke;
+  border-radius: 15px;
 
   margin: auto;
   color: var(--text-color);
@@ -36,7 +38,9 @@ const InputForm = styled.form`
     max-width: 10rem;
     margin: 1rem auto;
     padding: 0.75rem 2rem;
-    border: none;
+    border: 1px solid white;
+    background: none;
+    color: var(--textcolor);
   }
 `;
 

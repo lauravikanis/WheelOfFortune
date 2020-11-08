@@ -14,7 +14,7 @@ const TheLuckyOneContainer = styled.div`
     display: inline-block;
     border: 1px solid black;
     margin: 0.5rem auto 3rem;
-    color: var(--action-text);
+    color: var(--text-color);
     padding: 0.5rem;
     border-radius: 5px;
   }
