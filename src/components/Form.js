@@ -69,7 +69,7 @@ export default function Form({ setValues, setAlreadyChoosen, setTheLuckyOne }) {
         value={inputValue}
         onChange={(event) => setInputValue(event.target.value)}
         type="text"
-        placeholder="Please insert Separator"
+        placeholder="Please insert Values with choosen Separators"
         // className="persons__input"
       />
       <div className="form__extras">

@@ -23,7 +23,7 @@ const TheLuckyOneContainer = styled.div`
 export default function TheLuckyOne({ theLuckyOne }) {
   return (
     <TheLuckyOneContainer>
-      <h3 className="theLuckyOne__itsYou">🚀 Its you! 👩‍🎤</h3>
+      <h3 className="theLuckyOne__itsYou">Its:</h3>
       <h2 className="theLuckyOne__text  glow">✨ {theLuckyOne} ✨</h2>
     </TheLuckyOneContainer>
   );

@@ -21,7 +21,7 @@ export default function Header() {
   return (
     <MainHeader>
       <h1>Wheel Of Fortune 🎱</h1>
-      <h5> Tidy Verrsion</h5>
+      <h5> A different Version</h5>
     </MainHeader>
   );
 }

@@ -89,7 +89,7 @@ function App() {
           ) : (
             values.length > 0 && (
               <div className="noWinner">
-                <h2>🌈 new game 👩‍🦳 new luck 🍭 </h2>
+                <h2>Lets find you fortune! </h2>
               </div>
             )
           )}
