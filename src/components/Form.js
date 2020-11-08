@@ -1,6 +1,44 @@
-// import "./Form.css";
 import { useState } from "react";
+import styled from "styled-components";
 import Button from "./Button";
+// import { Input } from "./Input";
+
+const SeperatorInput = styled.input`
+  width: 90%;
+  text-align: center;
+  height: 3rem;
+`;
+
+const PersonInput = styled.input`
+  padding: 10px;
+  min-height: 100px;
+  text-align: center;
+  border-radius: 5.1px;
+`;
+
+const InputForm = styled.form`
+  background-color: lightcoral;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 70%auto;
+
+  margin: auto;
+  color: var(--text-color);
+  letter-spacing: 2px;
+  font-family: var(--textFont);
+
+  .form__extras {
+    padding: 1rem;
+  }
+  .button__submit {
+    border-radius: 10px;
+    max-width: 10rem;
+    margin: 1rem auto;
+    padding: 0.75rem 2rem;
+    border: none;
+  }
+`;
 
 export default function Form({ setValues, setAlreadyChoosen, setTheLuckyOne }) {
   const [inputValue, setInputValue] = useState("");
@@ -19,38 +57,32 @@ export default function Form({ setValues, setAlreadyChoosen, setTheLuckyOne }) {
   }
 
   return (
-    <details open={true} className="formDetails">
-      <summary>🖋 Input ✏️</summary>
-      <form
-        className="form"
-        onSubmit={(event) => {
-          event.preventDefault();
-          setAlreadyChoosen([]);
-          setTheLuckyOne("");
-          setValues(inputValueToObj(inputValue, separator));
-        }}
-      >
-        <input
-          value={inputValue}
-          onChange={(event) => setInputValue(event.target.value)}
+    <InputForm
+      onSubmit={(event) => {
+        event.preventDefault();
+        setAlreadyChoosen([]);
+        setTheLuckyOne("");
+        setValues(inputValueToObj(inputValue, separator));
+      }}
+    >
+      <PersonInput
+        value={inputValue}
+        onChange={(event) => setInputValue(event.target.value)}
+        type="text"
+        placeholder="Please insert Separator"
+        // className="persons__input"
+      />
+      <div className="form__extras">
+        <SeperatorInput
+          placeholder="Insert the Separator-Input here"
+          onChange={(event) => {
+            console.log("Seperator set ", event.target.value);
+            setSeparator(event.target.value);
+          }}
           type="text"
-          placeholder="👩‍🎤 Use the separator-Input  ⬇️ ‍"
-          className="persons__input"
         />
-        <div className="form__extras">
-          <label htmlFor="persons__inputSeperator">seperator: </label>
-          <input
-            placeholder={separator}
-            onChange={(event) => {
-              console.log("Seperator set ", event.target.value);
-              setSeparator(event.target.value);
-            }}
-            id="persons__inputSeperator"
-            type="text"
-          />
-        </div>
-        <Button className="button__submit" innerText={"Submit"} />
-      </form>
-    </details>
+      </div>
+      <Button className="button__submit" innerText={"Submit"} />
+    </InputForm>
   );
 }

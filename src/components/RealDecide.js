@@ -1,17 +1,15 @@
-// import "./RealDecide.css";
-
 import React from "react";
 import Value from "./Value";
 import styled from "styled-components/macro";
 
-const RealDecide = styled.div`
-  border: 1px solid black;
+const RealDecideContainer = styled.div`
   background-color: lightgray;
+  border-radius: 25px;
 `;
 
 export default function Realdecide({ values, setValues }) {
   return (
-    <RealDecide>
+    <RealDecideContainer>
       {values.map((value) => (
         <Value
           key={value.id}
@@ -20,6 +18,6 @@ export default function Realdecide({ values, setValues }) {
           setValues={setValues}
         />
       ))}
-    </RealDecide>
+    </RealDecideContainer>
   );
 }
